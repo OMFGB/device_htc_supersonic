@@ -1,8 +1,4 @@
-on early-init
-    export BOOTCLASSPATH /system/framework/core.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/core-junit.jar:/system/framework/wimax-api.jar
-
 on init
-    export BOOTCLASSPATH /system/framework/core.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/core-junit.jar:/system/framework/wimax-api.jar
     mount rootfs rootfs / remount
     mkdir /app-cache 01777 system system
     mount tmpfs tmpfs /app-cache size=8m
@@ -94,7 +90,11 @@ service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
     oneshot
 
 
-service dhcpcd /system/bin/dhcpcd -ABKL eth0
+service dhcpcd_eth0 /system/bin/dhcpcd -ABKL eth0
+    disabled
+    oneshot
+
+service iprenew_eth0 /system/bin/dhcpcd -n
     disabled
     oneshot
 
