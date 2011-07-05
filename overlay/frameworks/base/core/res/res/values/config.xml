@@ -196,5 +196,7 @@
     <string name="config_wimaxServiceClassname">com.android.server.WimaxService</string>
     <!-- Name of the wimax state tracker clas -->
     <string name="config_wimaxStateTrackerClassname">com.htc.net.wimax.WimaxStateTracker</string>
+     <!-- Electron Beam Animation -->
+    <bool name="config_animateScreenLights">false</bool>
 
 </resources>
