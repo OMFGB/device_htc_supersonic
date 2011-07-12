@@ -29,7 +29,6 @@ USE_CAMERA_STUB := true
 -include vendor/htc/supersonic/BoardConfigVendor.mk
 
 TARGET_NO_BOOTLOADER := true
-TARGET_NO_RECOVERY := true
 
 TARGET_BOARD_PLATFORM := qsd8k
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
